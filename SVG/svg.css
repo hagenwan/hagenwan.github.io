@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;400;800&display=swap");
+
+body {
+  margin: 0%;
+  height: 100vh;
+  display: flex;
+}
+
+.outer {
+  position: relative;
+}
+.container {
+  width: 25%;
+  max-width: 300px;
+  height: auto;
+  border-style: none;
+  margin: auto;
+  position: relative;
+}
+
+.container::after {
+  content: "hello world";
+  position: absolute;
+  width: 200%;
+  top: calc(50% - 0.7em);
+  left: -50%;
+  right: 0;
+  text-align: center;
+  font-family: "Source Code Pro", monospace;
+  color: hsl(17, 15%, 28%);
+  font-size: 2rem;
+  font-weight: 200;
+  transition: 400ms ease-out;
+}
+.container:hover::after {
+  color: hsl(16, 9%, 50%);
+  letter-spacing: 0.1em;
+  font-size: 1.7em;
+}
+
+.svg1 {
+  transform: rotate(0deg);
+  transition: 600ms ease-out;
+}
+.svg2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(-80deg);
+  transition: 500ms ease-out;
+}
+.svg3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(120deg) scale(1.05, 1.05);
+  transition: 400ms ease-out;
+}
+.svg4 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(0deg) scale(1.03, 1.03);
+  animation: spin 25s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.container:hover .svg1 {
+  transform: rotate(20deg);
+}
+.container:hover .svg2 {
+  transform: rotate(-100deg) scale(1.02, 1.02);
+}
+.container:hover .svg3 {
+  transform: rotate(130deg);
+}
