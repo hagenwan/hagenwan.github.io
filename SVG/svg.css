@@ -34,8 +34,6 @@ body {
 }
 .container:hover::after {
   color: hsl(16, 9%, 50%);
-  letter-spacing: 0.1em;
-  font-size: 1.7em;
 }
 
 .svg1 {
