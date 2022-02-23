@@ -12,7 +12,7 @@ h2 {
 p {
   font-family: "Source Code Pro", monospace;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 0.9rem;
 }
 
 .bkg_img {
@@ -66,4 +66,13 @@ p {
 
 p {
   text-align: left;
+}
+@media (max-width: 600px) {
+  .card {
+    width: 300px;
+    height: 400px;
+  }
+  .picture {
+    height: 230px;
+  }
 }
