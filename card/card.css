@@ -1,7 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;400;800&display=swap");
 
 body {
-  background: #f2f7fa;
+  transition: ease-in-out;
+  transition-duration: 200ms;
+}
+.bodyDark {
+  background: #353535;
+}
+.bodyLight {
+  background: #f1efe9;
 }
 
 h2 {
@@ -27,20 +34,32 @@ p {
   margin-top: 5rem;
   margin-left: auto;
   margin-right: auto;
-  background-color: rgb(247, 253, 253);
   border-style: solid;
   border-width: 0px;
   border-color: #cfcfcf;
   border-radius: 15px;
   overflow: hidden;
   position: relative;
-  box-shadow: 1px 1px 5px rgba(0, 40, 40, 0.15);
   transition: ease-in-out;
   transition-duration: 200ms;
 }
-.card:hover {
-  box-shadow: 1px 1px 10px rgba(0, 40, 40, 0.3);
+.card-light:hover {
+  box-shadow: 1px 1px 10px rgba(19, 29, 29, 0.35);
   transform: translateY(-0.2rem);
+}
+.card-light {
+  color: #2f2f2f;
+  background-color: #fdfbf5;
+  box-shadow: 1px 1px 5px rgba(19, 29, 29, 0.15);
+}
+.card-dark:hover {
+  box-shadow: 1px 1px 10px rgba(19, 29, 29, 0.7);
+  transform: translateY(-0.2rem);
+}
+.card-dark {
+  color: #eeeeee;
+  background-color: #252525;
+  box-shadow: 1px 1px 5px rgba(19, 29, 29, 0.5);
 }
 
 .picture {
@@ -75,4 +94,45 @@ p {
   .picture {
     height: 230px;
   }
+}
+
+.container {
+  position: relative;
+  padding: 20px;
+}
+.toggle-btn {
+  background-color: #252525;
+  height: 20px;
+  width: 35px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+  padding: 2px;
+  transition: ease-in-out;
+  transition-duration: 200ms;
+}
+.toggle-btn-dark {
+  background-color: #3374dd;
+  display: flex;
+  justify-content: flex-start;
+}
+.toggle-btn-light {
+  background-color: #e79b53;
+  display: flex;
+  justify-content: flex-end;
+}
+.toggle-circle {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 1px 1px 5px rgba(19, 29, 29, 0.5);
+  transition: ease-in-out;
+  transition-duration: 200ms;
+}
+.toggle-circle-light {
+  background-color: #f1efe9;
+}
+.toggle-circle-dark {
+  background-color: #353535;
 }

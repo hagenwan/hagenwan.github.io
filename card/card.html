@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="card.css" />
-
+    <script src="price.js"></script>
+    <script src="darkMode.js"></script>
     <title id="tabTitle">sTaCksAts</title>
   </head>
-  <body>
-    <div class="card">
+  <body id="body" class="bodyDark">
+    <div id="card" class="card card-dark">
       <img
         class="picture"
         id="rollerCoaster"
@@ -22,6 +23,14 @@
         <p id="description">To the mOoN!</p>
       </div>
     </div>
-    <script src="price.js"></script>
+    <div class="container">
+      <div id="toggleBtn" class="toggle-btn toggle-btn-dark">
+        <button
+          onclick="toggleMode();"
+          id="toggleCircle"
+          class="toggle-circle toggle-circle-dark"
+        ></button>
+      </div>
+    </div>
   </body>
 </html>

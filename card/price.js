@@ -1,4 +1,5 @@
 const btcusdUrl = 'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd&include_market_cap=true&include_24hr_change=true';
+let refreshCount = 0;
 async function getBTCUSD() {
     const response = await fetch(btcusdUrl);
     const data = await response.json();
@@ -26,7 +27,10 @@ async function getBTCUSD() {
     console.log(btcusdPriceFormat);
     console.log(btcMarketCapFormat);
     console.log(btc24hr);
+    refreshCount++;
+    console.log(refreshCount);
 }
 
 
 getBTCUSD();
+setInterval(getBTCUSD, 60000);
