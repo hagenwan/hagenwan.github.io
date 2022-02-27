@@ -126,7 +126,7 @@ p {
   height: 20px;
   width: 20px;
   margin: 2px;
-  border-radius: 50%;
+  border-radius: 10px;
   border: none;
   box-shadow: 1px 1px 5px rgba(19, 29, 29, 0.5);
   transition: ease-in-out;
