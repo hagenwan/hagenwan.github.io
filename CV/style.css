@@ -1,0 +1,338 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Merriweather:wght@300;400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800&display=swap");
+
+html.light {
+  height: 100%;
+  --bg: #fbefe7;
+  --bg2: #ecdacf;
+  --font: rgb(0, 0, 0);
+  --font-hover: rgb(156, 106, 86);
+  --select-font: #000;
+  --select-bkg: rgb(218, 176, 152);
+  --skillbar-base: rgba(179, 158, 149, 0.5);
+  --skillbar-top: rgb(156, 133, 123);
+  --propic-bkg: rgb(202, 178, 168);
+}
+html.dark {
+  height: 100%;
+  --bg: #13131b;
+  --bg2: #1d1d28;
+  --font: #e2f3f5;
+  --font-hover: #889af3;
+  --select-font: #e2f3f5;
+  --select-bkg: #455086;
+  --skillbar-base: #494a6b;
+  --skillbar-top: #687ff5;
+  --propic-bkg: #687ff5;
+}
+html {
+  font-size: 16px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--skillbar-base);
+  border-radius: 10px;
+}
+
+body {
+  width: auto;
+  background: var(--bg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 3rem 5rem 5rem 5rem;
+}
+
+::-moz-selection {
+  /* Code for Firefox */
+  color: var(--select-font);
+  background: var(--select-bkg);
+}
+
+::selection {
+  color: var(--select-fo);
+  background: var(--select-bkg);
+}
+
+h1 {
+  line-height: 0.3;
+  font-family: "Roboto Slab", serif;
+  font-weight: 600;
+  color: var(--font);
+}
+h2 {
+  line-height: 1;
+  font-family: "Roboto Slab", serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--font);
+  text-decoration: underline;
+  text-decoration-color: var(--skillbar-top);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.3rem;
+}
+
+h2:hover {
+  color: var(--font-hover);
+}
+h3 {
+  font-family: "Roboto Slab", serif;
+  line-height: 1;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--font);
+}
+h3:hover {
+  color: var(--font-hover);
+}
+h4 {
+  font-family: "Roboto Slab", serif;
+  font-weight: 400;
+  line-height: 1.2;
+  font-size: 0.875rem;
+  color: var(--font);
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+}
+h4:hover {
+  color: var(--font-hover);
+}
+p {
+  font-family: "Roboto Slab", serif;
+  font-weight: 300;
+  line-height: 1.2;
+  font-size: 0.75rem;
+  color: var(--font);
+
+  transition: color ease-in-out 100ms;
+}
+p:hover {
+  color: var(--font-hover);
+}
+
+/* following section is for the skill bar animation*/
+
+p.skillbar {
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+  position: relative;
+  width: fit-content;
+}
+p.skillbar::after {
+  content: "";
+  display: inline;
+  position: absolute;
+  width: 0px;
+  height: 50%;
+  top: 25%;
+  bottom: 25%;
+  left: calc(100% + 1em);
+  background: var(--skillbar-base);
+  border-radius: 10px;
+  transition: ease-in-out 300ms;
+  z-index: 0;
+}
+p.skillbar:hover::after {
+  width: 100px;
+  transition: ease-in-out 300ms;
+}
+
+p.skill1::before {
+  content: "";
+  display: inline;
+  position: absolute;
+  width: 0px;
+  height: 50%;
+  top: 25%;
+  bottom: 25%;
+  left: calc(100% + 1em);
+  background: var(--skillbar-top);
+  border-radius: 10px;
+  transition: ease-in-out 200ms;
+  z-index: 1;
+}
+p.skill1:hover::before {
+  width: 100px; /*edit for skill lvl, 100px max*/
+  transition: ease-in-out 300ms;
+  transition-delay: 100ms;
+}
+
+p.skill2::before {
+  content: "";
+  display: inline;
+  position: absolute;
+  width: 0px;
+  height: 50%;
+  top: 25%;
+  bottom: 25%;
+  left: calc(100% + 1em);
+  background: var(--skillbar-top);
+  border-radius: 10px;
+  transition: ease-in-out 200ms;
+  z-index: 1;
+}
+p.skill2:hover::before {
+  width: 70px; /*edit for skill lvl, 100px max*/
+  transition: ease-in-out 300ms;
+  transition-delay: 100ms;
+}
+
+p.skill3::before {
+  content: "";
+  display: inline;
+  position: absolute;
+  width: 0px;
+  height: 50%;
+  top: 25%;
+  bottom: 25%;
+  left: calc(100% + 1em);
+  background: var(--skillbar-top);
+  border-radius: 10px;
+  transition: ease-in-out 200ms;
+  z-index: 1;
+}
+p.skill3:hover::before {
+  width: 80px; /*edit for skill lvl, 100px max*/
+  transition: ease-in-out 300ms;
+  transition-delay: 100ms;
+}
+
+p.skill4::before {
+  content: "";
+  display: inline;
+  position: absolute;
+  width: 0px;
+  height: 50%;
+  top: 25%;
+  bottom: 25%;
+  left: calc(100% + 1em);
+  background: var(--skillbar-top);
+  border-radius: 10px;
+  transition: ease-in-out 200ms;
+  z-index: 1;
+}
+p.skill4:hover::before {
+  width: 90px; /*edit for skill lvl, 100px max*/
+  transition: ease-in-out 300ms;
+  transition-delay: 100ms;
+}
+
+p.skill5::before {
+  content: "";
+  display: inline;
+  position: absolute;
+  width: 0px;
+  height: 50%;
+  top: 25%;
+  bottom: 25%;
+  left: calc(100% + 1em);
+  background: var(--skillbar-top);
+  border-radius: 10px;
+  transition: ease-in-out 200ms;
+  z-index: 1;
+}
+p.skill5:hover::before {
+  width: 30px; /*edit for skill lvl, 100px max*/
+  transition: ease-in-out 300ms;
+  transition-delay: 100ms;
+}
+
+/*end of skillbar animation section*/
+
+div.solid {
+  margin: auto;
+
+  background-color: var(--skillbar-top);
+  height: 2px;
+  width: 80%;
+}
+.pro_pic {
+  border-radius: 50%;
+  background-color: var(--propic-bkg);
+  height: 5rem;
+  width: 5rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  transition: ease-out 300ms;
+}
+.pro_pic:hover {
+  border-radius: 15%;
+  height: 8rem;
+  width: 8rem;
+}
+.base_clear {
+  border: 1px solid rgba(87, 97, 97, 0); /*for showing div borders for dev*/
+}
+.base_position_0 {
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-width: 400px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  z-index: -2;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg2);
+  border-radius: 2rem;
+}
+.base_position_1_1 {
+  margin-left: auto;
+  margin-right: auto;
+  overflow-y: auto;
+  width: 50%;
+  text-align: center;
+}
+.base_position_1_2 {
+  margin-left: auto;
+  margin-right: auto;
+  height: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+.base_position_1_3 {
+  margin-left: auto;
+  margin-right: auto;
+  overflow: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.base_position_2_1 {
+  margin-left: 15px;
+  margin-right: 15px;
+
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+.base_textbox_right {
+  overflow-y: auto;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.base_textbox_left {
+  overflow-y: auto;
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 800px) {
+  html {
+    font-size: 12px;
+  }
+  body {
+    padding: 1rem 1rem 1rem 1rem;
+  }
+}
