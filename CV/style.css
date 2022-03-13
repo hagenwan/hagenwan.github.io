@@ -346,6 +346,7 @@ div.solid {
   display: block;
   width: 3rem;
   height: 1.5rem;
+  right: 0;
 }
 .switch input {
   display: none;
