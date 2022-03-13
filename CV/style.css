@@ -367,17 +367,22 @@ div.solid {
 }
 .slider:before {
   position: absolute;
-  content: "";
+  content: "🌝";
+  text-align: center;
+
+  font-size: 82%;
+
   left: 0;
   right: 1.5rem;
   top: 0;
   bottom: 0;
   border-radius: 0.75rem;
-  background-color: var(--bg2);
+  background-color: rgba(0, 0, 0, 0);
   transition: 300ms;
 }
 
 input:checked + .slider:before {
+  content: "🌚";
   left: 1.5rem;
   right: 0;
 }
