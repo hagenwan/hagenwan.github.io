@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Merriweather:wght@300;400;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800&display=swap");
 
-html.light {
+html {
   height: 100%;
   --bg: #fbefe7;
   --bg2: #ecdacf;
@@ -27,6 +27,7 @@ html.dark {
 }
 html {
   font-size: 16px;
+  transition: 300ms;
 }
 
 ::-webkit-scrollbar {
@@ -60,13 +61,13 @@ body {
 }
 
 h1 {
-  line-height: 0.3;
   font-family: "Roboto Slab", serif;
   font-weight: 600;
   color: var(--font);
 }
 h2 {
   line-height: 1;
+  margin-top: 2rem;
   font-family: "Roboto Slab", serif;
   font-size: 1.2rem;
   font-weight: 600;
@@ -138,7 +139,7 @@ p.skillbar::after {
   z-index: 0;
 }
 p.skillbar:hover::after {
-  width: 100px;
+  width: 5rem;
   transition: ease-in-out 300ms;
 }
 
@@ -157,7 +158,7 @@ p.skill1::before {
   z-index: 1;
 }
 p.skill1:hover::before {
-  width: 100px; /*edit for skill lvl, 100px max*/
+  width: 5rem; /*edit for skill lvl, 100px max*/
   transition: ease-in-out 300ms;
   transition-delay: 100ms;
 }
@@ -177,7 +178,7 @@ p.skill2::before {
   z-index: 1;
 }
 p.skill2:hover::before {
-  width: 70px; /*edit for skill lvl, 100px max*/
+  width: 3.5rem; /*edit for skill lvl, 100px max*/
   transition: ease-in-out 300ms;
   transition-delay: 100ms;
 }
@@ -197,7 +198,7 @@ p.skill3::before {
   z-index: 1;
 }
 p.skill3:hover::before {
-  width: 80px; /*edit for skill lvl, 100px max*/
+  width: 4rem; /*edit for skill lvl, 100px max*/
   transition: ease-in-out 300ms;
   transition-delay: 100ms;
 }
@@ -217,7 +218,7 @@ p.skill4::before {
   z-index: 1;
 }
 p.skill4:hover::before {
-  width: 90px; /*edit for skill lvl, 100px max*/
+  width: 4.5rem; /*edit for skill lvl, 100px max*/
   transition: ease-in-out 300ms;
   transition-delay: 100ms;
 }
@@ -237,7 +238,7 @@ p.skill5::before {
   z-index: 1;
 }
 p.skill5:hover::before {
-  width: 30px; /*edit for skill lvl, 100px max*/
+  width: 1.5rem; /*edit for skill lvl, 100px max*/
   transition: ease-in-out 300ms;
   transition-delay: 100ms;
 }
@@ -273,7 +274,7 @@ div.solid {
 .base_position_0 {
   overflow-y: auto;
   overflow-x: hidden;
-  min-width: 400px;
+
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
@@ -282,13 +283,13 @@ div.solid {
   display: flex;
   flex-direction: column;
   background-color: var(--bg2);
-  border-radius: 2rem;
+  border-radius: 1.5rem;
 }
 .base_position_1_1 {
   margin-left: auto;
   margin-right: auto;
   overflow-y: auto;
-  width: 50%;
+
   text-align: center;
 }
 .base_position_1_2 {
@@ -308,31 +309,100 @@ div.solid {
   display: flex;
   justify-content: center;
 }
+.left {
+  text-align: right;
+}
+.right {
+  text-align: left;
+}
 .base_position_2_1 {
   margin-left: 15px;
   margin-right: 15px;
-
   width: 300px;
   display: flex;
   flex-direction: column;
 }
 .base_textbox_right {
   overflow-y: auto;
-  text-align: left;
+
   margin-bottom: 10px;
 }
 
 .base_textbox_left {
   overflow-y: auto;
-  text-align: right;
+
   margin-bottom: 20px;
 }
 
-@media (max-width: 800px) {
-  html {
-    font-size: 12px;
-  }
+/*for styling dark mode toggle*/
+
+.container {
+  display: flex;
+  justify-content: end;
+}
+
+.switch {
+  position: relative;
+  display: block;
+  width: 3rem;
+  height: 1.5rem;
+}
+.switch input {
+  display: none;
+}
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 0.15rem solid var(--font-hover);
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: var(--font-hover);
+  transition: 300ms;
+}
+.slider.round {
+  border-radius: 0.75rem;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  left: 0;
+  right: 1.5rem;
+  top: 0;
+  bottom: 0;
+  border-radius: 0.75rem;
+  background-color: var(--bg2);
+  transition: 300ms;
+}
+
+input:checked + .slider:before {
+  left: 1.5rem;
+  right: 0;
+}
+
+@media (max-width: 740px) {
   body {
     padding: 1rem 1rem 1rem 1rem;
+  }
+  .base_position_1_3 {
+    flex-direction: column;
+  }
+  .base_position_2_1 {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .left {
+    text-align: left;
+  }
+  h2 {
+    margin-top: 1.5rem;
+  }
+  p.skillbar::after {
+    display: none;
+  }
+  p.skillbar::before {
+    display: none;
   }
 }
