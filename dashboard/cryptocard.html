@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="cryptocard.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"
+      integrity="sha512-QSkVNOCYLtj73J4hbmVoOV6KVZuMluZlioC+trLpewV8qMjsWqlIQvkn1KGX2StWvPMdWGBqim1xlC8krl1EKQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <section class="title-container">
+      <h1 class="hero" id="heroTitle">
+        "Buy high, sell low, easier done than said."
+      </h1>
+      <p class="hero">-you</p>
+      <a class="CTA hero" href="#section-dashboard">Dashboard</a>
+      <svg
+        class="moon"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 250 250"
+      >
+        <defs>
+          <style>
+            .moon-cls-1 {
+              fill: #2e3644;
+            }
+            .moon-cls-2 {
+              fill: #39445b;
+            }
+          </style>
+        </defs>
+        <g id="moon">
+          <path
+            class="moon-cls-1"
+            d="M208.377,218.127A124.995,124.995,0,0,1,37.161,36.076c-.2,3.386-.308,6.8-.308,10.239A171.813,171.813,0,0,0,208.377,218.127Z"
+          />
+          <path
+            class="moon-cls-2"
+            d="M250,125a124.677,124.677,0,0,1-41.623,93.127A171.813,171.813,0,0,1,36.853,46.315c0-3.437.109-6.853.308-10.239A124.993,124.993,0,0,1,250,125Z"
+          />
+          <circle class="moon-cls-2" cx="86.155" cy="157.869" r="21.414" />
+          <circle class="moon-cls-1" cx="86.155" cy="157.869" r="19.422" />
+          <circle class="moon-cls-1" cx="136.952" cy="127.988" r="9.462" />
+          <circle class="moon-cls-1" cx="167.829" cy="175.797" r="3.486" />
+          <circle class="moon-cls-1" cx="110.06" cy="94.124" r="3.486" />
+          <circle class="moon-cls-1" cx="225.598" cy="154.88" r="3.486" />
+          <circle class="moon-cls-1" cx="137.948" cy="18.426" r="3.486" />
+          <circle class="moon-cls-1" cx="210.159" cy="93.625" r="5.976" />
+          <circle class="moon-cls-1" cx="215.139" cy="170.319" r="11.952" />
+          <circle class="moon-cls-1" cx="158.367" cy="51.793" r="9.96" />
+          <circle class="moon-cls-1" cx="79.681" cy="57.769" r="15.936" />
+        </g>
+      </svg>
+    </section>
+    <section class="container" id="section-dashboard">
+      <div class="grid-big">
+        <div class="card card-flex">
+          <div class="graph" id="">
+            <canvas id="btcLine"></canvas>
+          </div>
+          <div class="info-card">
+            <h2 class="info">Bitcoin</h2>
+            <p class="info">Current Price</p>
+            <h3 class="price info" id="btcPrice">00,000 USD</h3>
+          </div>
+        </div>
+        <div class="card card-flex">
+          <div class="graph" id="">
+            <canvas id="ethLine"></canvas>
+          </div>
+          <div class="info-card">
+            <h2 class="info">Ethereum</h2>
+            <p class="info">Current Price</p>
+            <h3 class="price info" id="ethPrice">00,000 USD</h3>
+          </div>
+        </div>
+        <div class="card card-flex">
+          <div class="graph" id="">
+            <canvas id="solLine"></canvas>
+          </div>
+          <div class="info-card">
+            <h2 class="info">Solana</h2>
+            <p class="info">Current Price</p>
+            <h3 class="price info" id="solPrice">00,000 USD</h3>
+          </div>
+        </div>
+        <div class="card card-flex">
+          <div class="graph" id="">
+            <canvas id="dotLine"></canvas>
+          </div>
+          <div class="info-card">
+            <h2 class="info">Polkadat</h2>
+            <p class="info">Current Price</p>
+            <h3 class="price info" id="dotPrice">00,000 USD</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <svg
+      class="bg-mountain"
+      id="Layer_1"
+      data-name="Layer 1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      viewBox="0 0 1920 750"
+    >
+      <defs>
+        <style>
+          .cls-1 {
+            fill: url(#linear-gradient);
+          }
+          .cls-2 {
+            fill: url(#linear-gradient-2);
+          }
+          .cls-3 {
+            fill: #0b0c14;
+          }
+          .cls-4 {
+            fill: url(#linear-gradient-3);
+          }
+          .cls-5 {
+            fill: none;
+            stroke: #fff;
+            stroke-miterlimit: 10;
+          }
+          .cls-6 {
+            fill: url(#linear-gradient-4);
+          }
+        </style>
+        <linearGradient
+          id="linear-gradient"
+          x1="168.899"
+          y1="207.25"
+          x2="168.899"
+          y2="752.75"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0" stop-color="#232838" />
+          <stop offset="1" stop-color="#151624" />
+        </linearGradient>
+        <linearGradient
+          id="linear-gradient-2"
+          x1="557.557"
+          y1="2.75"
+          x2="557.557"
+          y2="752.75"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0" stop-color="#1d1f30" />
+          <stop offset="1" stop-color="#151624" />
+        </linearGradient>
+        <linearGradient
+          id="linear-gradient-3"
+          x1="1193.935"
+          y1="2.75"
+          x2="1193.935"
+          y2="752.75"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0" stop-color="#181929" />
+          <stop offset="1" stop-color="#151624" />
+        </linearGradient>
+        <linearGradient
+          id="linear-gradient-4"
+          x1="1701.027"
+          y1="145.295"
+          x2="1701.027"
+          y2="752.75"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0" stop-color="#0b0c14" />
+          <stop offset="1" stop-color="#151624" />
+        </linearGradient>
+      </defs>
+      <polygon
+        class="cls-1"
+        points="337.299 207.25 267.414 526.088 262.806 752.75 0.5 752.75 123.136 479.748 337.299 207.25"
+      />
+      <path
+        class="cls-2"
+        d="M852.308,752.75h-589.5l4.608-226.662L337.3,207.25s53.2,145.063,53.2,153.123,62.22,195.433,62.22,195.433l77.252-139.523,37.368-68.8L597,292.878,833.254,2.75,734.063,336.2l12.624,219.611Z"
+      />
+      <path
+        class="cls-3"
+        d="M567.341,347.488l-37.368,68.8L452.721,555.806S390.5,368.432,390.5,360.373,337.3,207.25,337.3,207.25l110.462,109.3Z"
+      />
+      <polygon
+        class="cls-4"
+        points="1653.807 752.75 852.308 752.75 746.687 555.806 734.063 336.195 833.254 2.75 930.191 359.869 1289.984 714.469 1370.355 415.154 1400.897 301.44 1494.678 145.295 1482.054 368.099 1503.695 561.346 1653.807 752.75"
+      />
+      <polygon
+        class="cls-3"
+        points="1370.355 415.154 1289.984 714.469 930.191 359.869 833.254 2.75 1067.255 283.307 1370.355 415.154"
+      />
+      <line
+        class="cls-5"
+        x1="1372.943"
+        y1="416.283"
+        x2="1370.355"
+        y2="415.154"
+      />
+      <polygon
+        class="cls-6"
+        points="1920 752.75 1653.807 752.75 1503.695 561.346 1482.054 368.099 1494.678 145.295 1638.505 380.52 1841.5 565.376 1920 752.75"
+      />
+    </svg>
+    <script src="cryptocard.js"></script>
+  </body>
+</html>
