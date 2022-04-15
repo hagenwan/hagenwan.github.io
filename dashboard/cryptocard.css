@@ -28,10 +28,18 @@ html {
 body {
   background-color: var(--theme-blue-1);
   color: var(--theme-light-1);
-  padding: 0rem 3rem 5rem 3rem;
+  padding: 0;
+  margin: 0;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
+
 .container {
   padding-top: 1rem;
+  background-color: var(--theme-blue-1);
+}
+section.bottom-margin {
+  margin-bottom: 5rem;
 }
 .card {
   background: rgba(255, 255, 255, 0.1);
@@ -63,10 +71,12 @@ body {
 }
 
 .title-container {
-  height: 60vh;
+  height: 70vh;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  transform-style: preserve-3d;
 }
 .hero {
   margin-inline: auto;
@@ -121,9 +131,19 @@ h3.info {
   font-size: 1rem;
   color: var(--theme-light-2);
 }
+.wrapper {
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0rem 3rem 0rem 3rem;
+  perspective: 10px;
+  scroll-behavior: smooth;
+}
 .bg-mountain {
-  position: fixed;
-  bottom: 0;
+  position: absolute;
+  margin-bottom: -100vh;
+  margin-top: 15vh;
+  transform: translateZ(-5px) scale(2);
   z-index: -1;
 }
 .graph {
@@ -133,11 +153,12 @@ canvas {
   height: 250px;
 }
 .moon {
-  width: 10vw;
+  width: 12rem;
   aspect-ratio: 1;
-  position: fixed;
-  margin-left: 30vw;
-  margin-top: 20vh;
+  position: absolute;
+  left: 10vw;
+  margin-top: 15vh;
+  transform: translateZ(-10px) scale(2);
   z-index: -2;
 }
 @media (max-width: 960px) {
