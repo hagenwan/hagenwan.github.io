@@ -191,4 +191,7 @@ canvas {
   .info-card {
     padding-bottom: 1.5rem;
   }
+  .moon {
+    margin-top: -80vh;
+  }
 }
